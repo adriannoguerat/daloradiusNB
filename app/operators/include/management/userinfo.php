@@ -37,7 +37,7 @@ $_input_descriptors0[] = array(
                                 'id' => 'firstname',
                                 'name' => 'firstname',
                                 'caption' => t('ContactInfo','FirstName'),
-                                'type' => 'text',
+                                'type' => 'hidden',
                                 'value' => ((isset($ui_firstname)) ? $ui_firstname : ''),
                             );
 
@@ -45,7 +45,7 @@ $_input_descriptors0[] = array(
                                 'id' => 'lastname',
                                 'name' => 'lastname',
                                 'caption' => t('ContactInfo','LastName'),
-                                'type' => 'text',
+                                'type' => 'hidden',
                                 'value' => ((isset($ui_lastname)) ? $ui_lastname : ''),
                             );
 
@@ -53,7 +53,7 @@ $_input_descriptors0[] = array(
                                 'id' => 'email',
                                 'name' => 'email',
                                 'caption' => t('ContactInfo','Email'),
-                                'type' => 'text',
+                                'type' => 'hidden',
                                 'value' => ((isset($ui_email)) ? $ui_email : ''),
                             );
 
@@ -61,30 +61,30 @@ $_input_descriptors0[] = array(
                                 'id' => 'copycontact',
                                 'name' => 'copycontact',
                                 'caption' => 'Copy contact information to billing',
-                                'type' => 'checkbox',
+                                'type' => 'hidden',
                                 'onclick' => 'copyUserBillInfo(this)'
                              );
 
 $_input_descriptors1 = array();
-$_input_descriptors1[] = array( 'id' => 'department', 'caption' => t('ContactInfo','Department'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'department', 'caption' => t('ContactInfo','Department'), 'type' => 'hidden',
                                'value' => ((isset($ui_department)) ? $ui_department : ''), 'name' => 'department' );
 $_input_descriptors1[] = array( 'id' => 'company', 'caption' => t('ContactInfo','Company'), 'type' => 'text',
                                'value' => ((isset($ui_company)) ? $ui_company : ''), 'name' => 'company' );
-$_input_descriptors1[] = array( 'id' => 'workphone', 'caption' => t('ContactInfo','WorkPhone'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'workphone', 'caption' => t('ContactInfo','WorkPhone'), 'type' => 'hidden',
                                'value' => ((isset($ui_workphone)) ? $ui_workphone : ''), 'name' => 'workphone' );
-$_input_descriptors1[] = array( 'id' => 'homephone', 'caption' => t('ContactInfo','HomePhone'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'homephone', 'caption' => t('ContactInfo','HomePhone'), 'type' => 'hidden',
                                'value' => ((isset($ui_homephone)) ? $ui_homephone : ''), 'name' => 'homephone' );
-$_input_descriptors1[] = array( 'id' => 'mobilephone', 'caption' => t('ContactInfo','MobilePhone'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'mobilephone', 'caption' => t('ContactInfo','MobilePhone'), 'type' => 'hidden',
                                'value' => ((isset($ui_mobilephone)) ? $ui_mobilephone : ''), 'name' => 'mobilephone' );
-$_input_descriptors1[] = array( 'id' => 'address', 'caption' => t('ContactInfo','Address'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'address', 'caption' => t('ContactInfo','Address'), 'type' => 'hidden',
                                'value' => ((isset($ui_address)) ? $ui_address : ''), 'name' => 'address' );
-$_input_descriptors1[] = array( 'id' => 'city', 'caption' => t('ContactInfo','City'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'city', 'caption' => t('ContactInfo','City'), 'type' => 'hidden',
                                'value' => ((isset($ui_city)) ? $ui_city : ''), 'name' => 'city' );
-$_input_descriptors1[] = array( 'id' => 'state', 'caption' => t('ContactInfo','State'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'state', 'caption' => t('ContactInfo','State'), 'type' => 'hidden',
                                'value' => ((isset($ui_state)) ? $ui_state : ''), 'name' => 'state' );
-$_input_descriptors1[] = array( 'id' => 'country', 'caption' => t('ContactInfo','Country'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'country', 'caption' => t('ContactInfo','Country'), 'type' => 'hidden',
                                'value' => ((isset($ui_country)) ? $ui_country : ''), 'name' => 'country' );
-$_input_descriptors1[] = array( 'id' => 'zip', 'caption' => t('ContactInfo','Zip'), 'type' => 'text',
+$_input_descriptors1[] = array( 'id' => 'zip', 'caption' => t('ContactInfo','Zip'), 'type' => 'hidden',
                                'value' => ((isset($ui_zip)) ? $ui_zip : ''), 'name' => 'zip' );
 
 $_input_descriptors2 = array();
@@ -92,15 +92,15 @@ $_input_descriptors2 = array();
 $_input_descriptors2[] = array(
                                     'id' => 'portalLoginPassword',
                                     'caption' => t('ContactInfo','PortalLoginPassword'),
-                                    'type' => 'text',
+                                    'type' => 'hidden',
                                     'name' => 'portalLoginPassword',
                                     'value' => ((isset($ui_PortalLoginPassword)) ? $ui_PortalLoginPassword : ''),
-                                    'tooltipText' => sprintf('If this field is empty then fields "%s" and "%s" are forced to "no"',
-                                                              t('ContactInfo','EnableUserUpdate'), t('ContactInfo','EnablePortalLogin')),
+                                    //'tooltipText' => sprintf('If this field is empty then fields "%s" and "%s" are forced to "no"',
+                                    //                          t('ContactInfo','EnableUserUpdate'), t('ContactInfo','EnablePortalLogin')),
                               );
 
 $_input_descriptors2[] = array(
-                                    'type' => 'select',
+                                    'type' => 'hidden',
                                     'name' => 'changeUserInfo',
                                     'caption' => t('ContactInfo','EnableUserUpdate'),
                                     'options' => array( "0" => "no", "1" => "yes" ),
@@ -109,7 +109,7 @@ $_input_descriptors2[] = array(
                               );
                               
 $_input_descriptors2[] = array(
-                                    'type' => 'select',
+                                    'type' => 'hidden',
                                     'name' => 'enableUserPortalLogin',
                                     'caption' => t('ContactInfo','EnablePortalLogin'),
                                     'options' => array( "0" => "no", "1" => "yes" ),
@@ -118,7 +118,7 @@ $_input_descriptors2[] = array(
                               );
 
 $_input_descriptors2[] = array(
-                                "type" => "textarea",
+                                "type" => "hidden",
                                 "id" => "notes",
                                 "name" => "notes",
                                 "caption" => t('ContactInfo','Notes'),
@@ -139,7 +139,7 @@ $_input_descriptors2[] = array( 'name' => 'updateby', 'caption' => t('all','Upda
 
 // fieldset
 $_fieldset0_descriptor = array(
-                                "title" => t('title','ContactInfo'),
+                                //"title" => t('title','ContactInfo'),
                               );
 
 open_fieldset($_fieldset0_descriptor);
@@ -154,7 +154,7 @@ unset($_input_descriptors0);
 
 // fieldset
 $_fieldset1_descriptor = array(
-                                "title" => t('title','BusinessInfo'),
+                                //"title" => t('title','BusinessInfo'),
                               );
 
 open_fieldset($_fieldset1_descriptor);
@@ -169,7 +169,7 @@ unset($_input_descriptors1);
 
 // fieldset
 $_fieldset2_descriptor = array(
-                                "title" => "Other",
+                                //"title" => "Other",
                               );
 
 open_fieldset($_fieldset2_descriptor);
