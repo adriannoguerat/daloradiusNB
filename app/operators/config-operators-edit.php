@@ -226,7 +226,7 @@
                                         "id" => "operator_password",
                                         "name" => "operator_password",
                                         "caption" => t('all','Password'),
-                                        "type" => $hiddenPassword,
+                                        "type" => "password",
                                         "value" => ((isset($operator_password)) ? $operator_password : ""),
                                         "random" => true
                                      );

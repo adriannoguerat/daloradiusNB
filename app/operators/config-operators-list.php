@@ -43,10 +43,10 @@
                  );
     
     if (strtolower($configValues['CONFIG_IFACE_PASSWORD_HIDDEN']) === "yes") {
-        $cols[] = t('all','Password');
+     $cols[] = t('all','Password');
     } else {
         $cols["auth"] = t('all','Password');
-    }
+	}
     
     $cols["fullname"] = "Full name";
     $cols["title"] = "Title";
@@ -147,9 +147,9 @@
             
             list($id, $username, $auth, $fullname, $title) = $row;
             
-            if (strtolower($configValues['CONFIG_IFACE_PASSWORD_HIDDEN']) === "yes") {
+	    /*if (strtolower($configValues['CONFIG_IFACE_PASSWORD_HIDDEN']) === "yes") {*/
                 $auth = "[Password is hidden]";
-            }
+/*	}*/
             
             // preparing checkboxes and tooltips stuff
             $tooltip = array(

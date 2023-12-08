@@ -473,7 +473,7 @@ function enableUser() {
         $options = get_active_plans();
         array_unshift($options, '');
         $input_descriptors0[] = array(
-										'type' => 'hidden',/* antiguo valor select */
+					'type' => 'hidden',/* antiguo valor select */
                                          'name' => 'planName',
                                          'caption' => t('all','PlanName'),
                                         // 'tooltipText' => t('Tooltip','planNameTooltip'),
@@ -483,7 +483,7 @@ function enableUser() {
 
         // set navbar stuff
         $navkeys = array(
-                          'AccountInfo', 'RADIUSCheck', 'RADIUSReply',
+                          'AccountInfo', 'RADIUSCheck', 'RADIUSReply', 'UserInfo',
                           'Groups', 'Attributes', array( 'OtherInfo', "Other Info" )
                         );
 
@@ -511,8 +511,6 @@ function enableUser() {
         }
 
         close_fieldset();
-		
-			include_once('include/management/userinfo.php');
 
         // open a fieldset
         $fieldset0_descriptor = array(
@@ -616,7 +614,6 @@ EOF;
         }
 
         echo '</div><!-- .container -->';
-		
 
         close_fieldset();
 
@@ -674,9 +671,9 @@ EOF;
         close_tab($navkeys, 2);
 
         // open 3-rd tab (not shown)
-        //open_tab($navkeys, 3);
-        
-        //close_tab($navkeys, 3);
+        open_tab($navkeys, 3);
+        include_once('include/management/userinfo.php');
+        close_tab($navkeys, 3);
 
 
         // open 4-th tab (not shown)
@@ -685,21 +682,21 @@ EOF;
       //  close_tab($navkeys, 4);
 
         // open 5-th tab (not shown)
-        open_tab($navkeys, 3);
+        open_tab($navkeys, 4);
 
         include('../common/includes/db_open.php');
         include_once('include/management/groups.php');
         include('../common/includes/db_close.php');
 
-        close_tab($navkeys, 3);
-
-        open_tab($navkeys, 4);
-
-        include_once('include/management/attributes.php');
-
         close_tab($navkeys, 4);
 
         open_tab($navkeys, 5);
+
+        include_once('include/management/attributes.php');
+
+        close_tab($navkeys, 5);
+
+        open_tab($navkeys, 6);
 
         // accordion
         echo '<div class="accordion m-2" id="accordion-parent">';
@@ -709,7 +706,7 @@ EOF;
         userConnectionStatus($username, 1);                     // userConnectionStatus (same as above)
         echo '</div>';
 
-        close_tab($navkeys, 5);
+        close_tab($navkeys, 6);
 
         // close tab wrapper
         close_tab_wrapper();

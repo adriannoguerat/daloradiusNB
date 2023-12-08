@@ -359,7 +359,7 @@
         $input_descriptors0 = array();
 
         $input_descriptors0[] = array(
-                                        "type" =>"select",
+                                        "type" =>"hidden",
                                         "name" => "authType",
                                         "caption" => "Authentication Type",
                                         "options" => $valid_authTypes,
@@ -406,7 +406,7 @@
                                         "name" => "passwordType",
                                         "caption" => t('all','PasswordType'),
                                         "options" => $valid_passwordTypes,
-                                        "type" => "select",
+                                        "type" => "hidden",
                                         "selected_value" => ((isset($failureMsg)) ? $passwordType : "")
                                     );
 
@@ -416,9 +416,9 @@
         $input_descriptors2[] = array(
                                         "name" => "macaddress",
                                         "caption" => t('all','MACAddress'),
-                                        "type" => "text",
+                                        "type" => "hidden",
                                         "value" => ((isset($failureMsg)) ? $macaddress : ""),
-                                        "tooltipText" => t('Tooltip','macaddressTooltip'),
+                                       // "tooltipText" => t('Tooltip','macaddressTooltip'),
                                         "pattern" => trim(MACADDR_REGEX, "/"),
                                         "title" => "you should provide a valid MAC address"
                                      );
@@ -429,15 +429,15 @@
         $input_descriptors3[] = array(
                                         "name" => "pincode",
                                         "caption" => t('all','PINCode'),
-                                        "type" => "text",
+                                        "type" => "hidden",
                                         "value" => ((isset($failureMsg)) ? $pincode : ""),
-                                        "tooltipText" => t('Tooltip','pincodeTooltip'),
-                                        "random" => true,
+                                       // "tooltipText" => t('Tooltip','pincodeTooltip'),
+                                       // "random" => true,
                                      );
 
         // fieldset
         $fieldset0_descriptor = array(
-                                        "title" => "Common parameters",
+                                        //"title" => "Common parameters",
                                      );
 
         $fieldset1_descriptor = array(
@@ -446,17 +446,17 @@
                                      );
 
         $fieldset2_descriptor = array(
-                                        "title" => "MAC Address info",
-                                        "id" => "macAuth-fieldset",
+                                      //  "title" => "MAC Address info",
+                                       // "id" => "macAuth-fieldset",
                                      );
 
         $fieldset3_descriptor = array(
-                                        "title" => "PIN code info",
-                                        "id" => "pincodeAuth-fieldset",
+                                       // "title" => "PIN code info",
+                                       // "id" => "pincodeAuth-fieldset",
                                      );
 
         // set navbar stuff
-        $navkeys = array( 'AccountInfo', 'UserInfo', 'BillingInfo', 'Attributes' );
+        $navkeys = array( 'AccountInfo', 'Attributes' );
 
         // print navbar controls
         print_tab_header($navkeys);
@@ -486,6 +486,8 @@
         }
 
         close_fieldset();
+		
+		include_once('include/management/userinfo.php');
 
         // open 2-st fieldset
         open_fieldset($fieldset2_descriptor);
@@ -512,20 +514,20 @@
         //~ $customApplyButton = sprintf('<input type="submit" name="submit" value="%s" class="button">', t('buttons','apply'));
 
         // open 1-th tab (shown)
-        open_tab($navkeys, 1);
-        include_once('include/management/userinfo.php');
-        close_tab($navkeys, 1);
+        //open_tab($navkeys, 1);
+        
+       // close_tab($navkeys, 1);
 
 
         // open 2-th tab (shown)
-        open_tab($navkeys, 2);
-        include_once('include/management/userbillinfo.php');
-        close_tab($navkeys, 2);
+       // open_tab($navkeys, 2);
+        //include_once('include/management/userbillinfo.php');
+        //close_tab($navkeys, 2);
 
         // open 3-th tab (shown)
-        open_tab($navkeys, 3);
+        open_tab($navkeys, 1);
         include_once('include/management/attributes.php');
-        close_tab($navkeys, 3);
+        close_tab($navkeys, 1);
 
         // close tab wrapper
         close_tab_wrapper();
